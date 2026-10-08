@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Route RESTful API dạng GET
+// Thêm route cho trang chủ /
+app.get('/', (req, res) => {
+  res.send('Chào mừng bạn đến với RESTful API Server!');
+});
 app.get('/api/hello', (req, res) => {
   res.status(200).json({
     message: 'Hello World from Node.js Express API!',
